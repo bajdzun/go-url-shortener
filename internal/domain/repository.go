@@ -6,10 +6,10 @@ import (
 )
 
 var (
-	ErrURLNotFound      = errors.New("url not found")
-	ErrInvalidURL       = errors.New("invalid url")
-	ErrShortCodeExists  = errors.New("short code already exists")
-	ErrExpiredURL       = errors.New("url has expired")
+	ErrURLNotFound     = errors.New("url not found")
+	ErrInvalidURL      = errors.New("invalid url")
+	ErrShortCodeExists = errors.New("short code already exists")
+	ErrExpiredURL      = errors.New("url has expired")
 )
 
 type URLRepository interface {

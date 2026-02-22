@@ -136,7 +136,7 @@ func (s *URLService) GetOriginalURL(ctx context.Context, shortCode string, analy
 			return "", domain.ErrURLNotFound
 		}
 
-    s.logger.Error("failed to get URL", zap.Error(err))
+		s.logger.Error("failed to get URL", zap.Error(err))
 
 		return "", err
 	}

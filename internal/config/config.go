@@ -10,12 +10,12 @@ import (
 )
 
 type Config struct {
-	App      AppConfig
-	Database DatabaseConfig
-	Redis    RedisConfig
+	App       AppConfig
+	Database  DatabaseConfig
+	Redis     RedisConfig
 	RateLimit RateLimitConfig
-	Logging  LoggingConfig
-	Metrics  MetricsConfig
+	Logging   LoggingConfig
+	Metrics   MetricsConfig
 }
 
 type AppConfig struct {
@@ -25,14 +25,14 @@ type AppConfig struct {
 }
 
 type DatabaseConfig struct {
-	Host            string
-	Port            string
-	User            string
-	Password        string
-	Name            string
-	SSLMode         string
-	MaxConnections  int
-	MaxIdleConns    int
+	Host           string
+	Port           string
+	User           string
+	Password       string
+	Name           string
+	SSLMode        string
+	MaxConnections int
+	MaxIdleConns   int
 }
 
 type RedisConfig struct {
@@ -69,14 +69,14 @@ func Load() (*Config, error) {
 			BaseURL: os.Getenv("APP_BASE_URL"),
 		},
 		Database: DatabaseConfig{
-			Host:            os.Getenv("DB_HOST"),
-			Port:            os.Getenv("DB_PORT"),
-			User:            os.Getenv("DB_USER"),
-			Password:        os.Getenv("DB_PASSWORD"),
-			Name:            os.Getenv("DB_NAME"),
-			SSLMode:         os.Getenv("DB_SSL_MODE"),
-			MaxConnections:  getEnvAsInt("DB_MAX_CONNECTIONS"),
-			MaxIdleConns:    getEnvAsInt("DB_MAX_IDLE_CONNECTIONS"),
+			Host:           os.Getenv("DB_HOST"),
+			Port:           os.Getenv("DB_PORT"),
+			User:           os.Getenv("DB_USER"),
+			Password:       os.Getenv("DB_PASSWORD"),
+			Name:           os.Getenv("DB_NAME"),
+			SSLMode:        os.Getenv("DB_SSL_MODE"),
+			MaxConnections: getEnvAsInt("DB_MAX_CONNECTIONS"),
+			MaxIdleConns:   getEnvAsInt("DB_MAX_IDLE_CONNECTIONS"),
 		},
 		Redis: RedisConfig{
 			Host:     os.Getenv("REDIS_HOST"),

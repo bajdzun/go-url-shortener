@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/bajdzun/go-url-shortener/internal/domain"
 	"github.com/bajdzun/go-url-shortener/internal/service"
+	"github.com/go-chi/chi/v5"
 	"go.uber.org/zap"
 )
 

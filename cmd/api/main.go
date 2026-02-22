@@ -9,16 +9,16 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
-	"github.com/go-chi/cors"
-	"github.com/go-redis/redis/v8"
-	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/bajdzun/go-url-shortener/internal/config"
 	"github.com/bajdzun/go-url-shortener/internal/handler"
 	custommiddleware "github.com/bajdzun/go-url-shortener/internal/middleware"
 	"github.com/bajdzun/go-url-shortener/internal/repository"
 	"github.com/bajdzun/go-url-shortener/internal/service"
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
+	"github.com/go-redis/redis/v8"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"go.uber.org/zap"
 )
@@ -141,7 +141,8 @@ func main() {
 		logger.Info("shutting down server...")
 
 		// Shutdown signal with grace period of 30 seconds
-		shutdownCtx, _ := context.WithTimeout(serverCtx, 30*time.Second)
+		shutdownCtx, shutdownRelease := context.WithTimeout(serverCtx, 30*time.Second)
+		defer shutdownRelease()
 
 		go func() {
 			<-shutdownCtx.Done()

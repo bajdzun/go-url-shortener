@@ -16,19 +16,19 @@ type URL struct {
 }
 
 type Analytics struct {
-	ID         int64     `json:"id"`
-	ShortCode  string    `json:"short_code"`
-	ClickedAt  time.Time `json:"clicked_at"`
-	IPAddress  string    `json:"ip_address,omitempty"`
-	UserAgent  string    `json:"user_agent,omitempty"`
-	Referer    string    `json:"referer,omitempty"`
-	Country    string    `json:"country,omitempty"`
+	ID        int64     `json:"id"`
+	ShortCode string    `json:"short_code"`
+	ClickedAt time.Time `json:"clicked_at"`
+	IPAddress string    `json:"ip_address,omitempty"`
+	UserAgent string    `json:"user_agent,omitempty"`
+	Referer   string    `json:"referer,omitempty"`
+	Country   string    `json:"country,omitempty"`
 }
 
 type URLStats struct {
-	ShortCode   string    `json:"short_code"`
-	OriginalURL string    `json:"original_url"`
-	ClickCount  int64     `json:"click_count"`
-	CreatedAt   time.Time `json:"created_at"`
+	ShortCode   string     `json:"short_code"`
+	OriginalURL string     `json:"original_url"`
+	ClickCount  int64      `json:"click_count"`
+	CreatedAt   time.Time  `json:"created_at"`
 	LastClicked *time.Time `json:"last_clicked,omitempty"`
 }
