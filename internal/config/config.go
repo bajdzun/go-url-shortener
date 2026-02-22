@@ -58,9 +58,8 @@ type MetricsConfig struct {
 }
 
 func Load() (*Config, error) {
-	if err := godotenv.Load(); err != nil {
-		return nil, fmt.Errorf("error loading .env file: %w", err)
-	}
+	// Load .env file if it exists (optional - ignore error if not found)
+	_ = godotenv.Load()
 
 	cfg := &Config{
 		App: AppConfig{
