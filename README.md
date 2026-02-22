@@ -277,6 +277,10 @@ CREATE TABLE url_analytics (
 );
 ```
 
+### Database Migrations
+
+Migrations are located in `migrations/init.sql` and are **automatically executed** when PostgreSQL container is first created.
+
 ## 🏛️ Design Patterns & Best Practices
 
 ### Clean Architecture

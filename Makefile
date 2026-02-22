@@ -1,5 +1,4 @@
 .PHONY: help build test test-coverage lint fmt clean
-.DEFAULT_GOAL := help
 
 help:
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -23,3 +22,5 @@ fmt:
 
 clean:
 	rm -rf bin/ coverage/
+
+.DEFAULT_GOAL := help
